@@ -1324,3 +1324,32 @@ body.kc-popup-open { overflow: hidden; }
 @media print {
   .kc-popup { display: none !important; }
 }
+
+/* Product and info cards, ported from the Kindle & Cloth article system. */
+.gift-group { margin: 1.8em 0 2em; }
+.gift-item { display: grid; grid-template-columns: 220px 1fr; gap: 0.85em 1.2em; align-items: start; margin: 0 0 1.35em; padding: 1.05em 1.15em 1.1em; background: var(--paper); border: 1px solid var(--gold-soft); border-radius: var(--radius); }
+.gift-photo { margin: 0; }
+.gift-photo a { display: block; }
+.gift-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: calc(var(--radius) - 4px); background: #efe8de; }
+.gift-photo figcaption { font-size: 12px; line-height: 1.45; color: var(--ink-soft); font-style: italic; text-align: left; margin-top: 8px; }
+.gift-photo .credit { margin-top: 2px; letter-spacing: .05em; }
+.gift-copy h3 { font-size: 22px; margin: 0 0 0.45em; }
+.gift-item h3 a { text-decoration: none; }
+.gift-item h3 a:hover { text-decoration: underline; text-decoration-color: var(--gold); }
+.gift-why { margin: 0; }
+.gift-why .kicker { display: block; margin-bottom: 0.3em; color: var(--tan-dark); }
+.gift-shop { margin: 0.75em 0 0; }
+.gift-shop .btn { padding: 10px 16px; font-size: 11px; letter-spacing: .14em; }
+
+.signup {background:var(--paper);border-color:var(--gold-soft)}
+.signup h2 {font-size:30px;margin:0 0 10px}.signup p:last-child{margin-bottom:0}
+.prose > .opening::first-letter {font-family:var(--serif);float:left;font-size:78px;line-height:.8;padding:8px 10px 0 0;color:var(--tan-dark)}
+.prose .howto-card .howto-tools{margin:0 0 16px;padding-left:1.3em}
+.prose .howto-card h3{overflow-wrap:anywhere}
+.prose .gift-item{grid-template-columns:1fr}
+.prose .gift-item .gift-copy h3{margin-top:0}
+.prose .gift-item .gift-why{font-family:var(--sans);color:var(--ink-soft);font-size:16px}
+.prose .gift-item .gift-shop{margin-bottom:0}
+.prose .info-card{background:var(--sage-light);border:1px solid var(--gold-soft);padding:20px 24px;border-radius:var(--radius);margin:28px 0}
+.prose .info-card h3{margin-top:0}.prose .info-card p:last-child{margin-bottom:0}
+@media(max-width:600px){.prose .gift-item{padding:18px}.prose .recipe-meta{font-size:12px;letter-spacing:.03em}.signup{margin-left:16px;margin-right:16px}.prose blockquote{padding:20px}.prose .info-card{padding:18px}}
