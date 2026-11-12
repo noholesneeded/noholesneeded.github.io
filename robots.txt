@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /pin-img/
 
 Sitemap: https://noholesneeded.github.io/sitemap.xml
