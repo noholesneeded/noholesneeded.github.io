@@ -138,6 +138,8 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.15;
 .cta .corner { position: absolute; width: 96px; }
 .cta .c-tl { top: 2px; left: 2px; }
 .cta .c-tr { top: 2px; right: 2px; transform: scaleX(-1); }
+.cta .c-br { bottom: 2px; right: 2px; transform: rotate(180deg); }
+.corner { pointer-events: none; }
 
 /* ---------- page / post ---------- */
 .page-head { text-align: center; padding: 64px 0 36px; background: linear-gradient(180deg, var(--ivory), var(--blush)); position: relative; overflow: hidden; }
