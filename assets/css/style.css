@@ -956,13 +956,20 @@ table.compare .btn { display: inline-block; margin-top: 8px; }
 }
 
 /* ---------- newsletter signup ---------- */
+:root {
+  --cream: #F7F1E8;
+  --rust: #B5532A;
+  --ink-brand: #2B2622;
+}
+.guide-bar,
 .checklist-bar {
   margin: 0;
   text-align: center;
-  background: #F9F5ED;
+  background: var(--cream);
   border-bottom: 1px solid var(--gold-soft);
   padding: 10px 16px;
 }
+.guide-bar a,
 .checklist-bar a {
   display: inline-block;
   font-size: 12px;
@@ -970,56 +977,110 @@ table.compare .btn { display: inline-block; margin-top: 8px; }
   letter-spacing: .18em;
   text-transform: uppercase;
   text-decoration: none;
-  color: #B0674A;
+  color: var(--rust);
   min-height: 44px;
   line-height: 44px;
   padding: 0 8px;
 }
+.guide-bar a:hover,
+.guide-bar a[aria-current="page"],
 .checklist-bar a:hover,
-.checklist-bar a[aria-current="page"] { color: #7A8C6E; }
+.checklist-bar a[aria-current="page"] { color: var(--sage); }
 
 .signup {
-  background: #F9F5ED;
-  border: 1px solid #7A8C6E;
+  background: var(--cream);
+  border: 1px solid var(--gold-soft);
   border-radius: var(--radius);
   padding: 28px 22px 18px;
   max-width: 640px;
   margin: 36px auto 10px;
   text-align: center;
   box-sizing: border-box;
+  color: var(--ink-brand);
 }
 .signup-footer { margin: 28px auto 16px; }
 .signup-post { margin: 8px auto 36px; }
-.signup-landing { margin: 0 auto; border: 0; padding: 8px 0 0; background: transparent; }
-.signup [data-form].inline-container { max-width: 100% !important; margin: 0 auto; }
-.signup [data-form] h1 {
+.signup-landing { margin: 0 auto; }
+.signup-cover {
+  display: block;
+  width: 160px;
+  max-width: 46%;
+  height: auto;
+  margin: 0 auto 16px;
+  border-radius: 6px;
+}
+.signup .kicker {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin: 0 0 8px;
+}
+.signup h2 {
   font-family: var(--serif);
   font-size: clamp(26px, 6vw, 34px);
   font-weight: 500;
   line-height: 1.2;
-  color: var(--ink);
+  color: var(--ink-brand);
   margin: 0 0 8px;
 }
-.signup-landing [data-form] h1 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+.signup > p {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+.signup-fine {
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 12px 0 0;
+}
+.signup-fine a { color: var(--tan-dark); white-space: nowrap; }
+
+/* Hide the embed's own title and supporting line; we provide those in the card. */
+.signup [eo-block="title"],
+.signup [eo-block="text"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.signup [data-form] {
+  --font-family: var(--sans);
+  --text-colour: #2B2622;
+  --label-colour: #2B2622;
+  --field-colour: #ffffff;
+  --button-colour: #B5532A;
+  --button-text-colour: #F7F1E8;
+  --field-border-colour: #c5b9a8;
+  --eo-form-font-family: var(--sans);
+  --eo-form-font-color: #2B2622;
+  --eo-form-placeholder: #5a554e;
+  --eo-form-label-color: #2B2622;
+  --eo-form-input-background: #ffffff;
+  --eo-form-border-color: #c5b9a8;
+  --configured-primary-color: #B5532A;
+  max-width: 100% !important;
+  margin: 0 auto;
+  background: transparent;
+}
+.signup [data-form].inline-container { max-width: 100% !important; margin: 0 auto; }
+.signup [data-form] h1,
 .signup [data-form] .text-block,
 .signup [data-form] .fr-inner {
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.6;
-  color: var(--ink-soft);
+  color: var(--ink-brand);
 }
 .signup [data-form] .text-block a { color: var(--tan-dark); }
-.signup [data-form] .main-form {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: stretch;
-  justify-content: flex-start;
-  gap: 10px;
-  width: 100%;
-  max-width: 420px;
-  margin: 0 auto;
-}
+.signup [data-form] .main-form,
 .signup [data-form] [eo-form-fields-container],
 .signup [data-form] .form-container,
 .signup [data-form] .emailoctopus-form-wrapper,
@@ -1030,11 +1091,13 @@ table.compare .btn { display: inline-block; margin-top: 8px; }
   align-items: stretch;
   justify-content: flex-start;
   width: 100%;
-  max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
   box-sizing: border-box;
+  background: transparent;
 }
+.signup [data-form] .main-form { gap: 10px; }
 .signup [data-form] .main-form .form-group,
 .signup [data-form] .main-form .emailoctopus-form-row,
 .signup [data-form] .form-group,
@@ -1044,9 +1107,14 @@ table.compare .btn { display: inline-block; margin-top: 8px; }
   max-width: 100%;
   min-width: 0;
   margin: 0;
-  margin-left: 0;
-  margin-right: 0;
   box-sizing: border-box;
+}
+.signup [data-form] label,
+.signup [data-form] [eo-label] {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: #2B2622;
 }
 .signup [data-form] input[type="email"],
 .signup [data-form] .form-control {
@@ -1057,22 +1125,27 @@ table.compare .btn { display: inline-block; margin-top: 8px; }
   box-sizing: border-box;
   padding: 12px 16px;
   font-family: var(--sans);
-  font-size: 16px;
+  font-size: 16px !important;
   font-weight: 400;
   letter-spacing: 0;
   text-transform: none;
-  color: var(--ink);
-  background: #fff;
-  border: 1px solid #CED4DA;
+  color: #2B2622 !important;
+  background: #fff !important;
+  border: 1px solid #c5b9a8 !important;
   border-radius: 10px;
   -webkit-appearance: none;
   appearance: none;
 }
+.signup [data-form] input[type="email"]::placeholder,
+.signup [data-form] .form-control::placeholder {
+  color: #5a554e;
+  opacity: 1;
+}
 .signup [data-form] input[type="email"]:focus,
 .signup [data-form] .form-control:focus {
-  outline: 2px solid #7A8C6E;
+  outline: 2px solid #B5532A;
   outline-offset: 2px;
-  border-color: #7A8C6E;
+  border-color: #B5532A !important;
 }
 .signup [data-form] .main-form input[type="submit"],
 .signup [data-form] .main-form .btn,
@@ -1084,39 +1157,39 @@ table.compare .btn { display: inline-block; margin-top: 8px; }
   min-height: 44px;
   box-sizing: border-box;
   margin: 0;
-  margin-left: 0;
-  margin-right: 0;
   padding: 12px 18px;
   font-family: var(--sans);
   font-size: 13px;
   font-weight: 500;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: #fff !important;
-  background: #B0674A !important;
-  border: 1px solid #B0674A !important;
+  color: #F7F1E8 !important;
+  background: #B5532A !important;
+  border: 1px solid #B5532A !important;
   border-radius: 999px;
   cursor: pointer;
 }
 .signup [data-form] input[type="submit"]:hover,
-.signup [data-form] .btn-primary:hover {
-  background: #96583e !important;
-  border-color: #96583e !important;
-  color: #fff !important;
+.signup [data-form] .btn-primary:hover,
+.signup [data-form] input[type="submit"]:focus-visible,
+.signup [data-form] .btn-primary:focus-visible {
+  background: #9a4420 !important;
+  border-color: #9a4420 !important;
+  color: #F7F1E8 !important;
 }
 .signup [data-form] .emailoctopus-success-message,
 .signup [data-form] .emailoctopus-error-message {
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.55;
-  color: var(--ink);
+  color: #2B2622;
   margin: 0 0 12px;
 }
 .signup [data-form] .mastfoot,
 .signup [data-form] .mastfoot p {
   font-size: 12px;
   color: var(--ink-soft);
-  margin: 8px 0 0;
+  margin: 8px auto 0;
 }
 .signup [data-form] .emailoctopus-form-row-hp {
   position: absolute !important;
@@ -1129,31 +1202,35 @@ table.compare .btn { display: inline-block; margin-top: 8px; }
   margin: 22px auto 8px !important;
   font-size: 14px !important;
 }
-.signup-foot-link a { color: #B0674A; }
+.signup-foot-link a { color: var(--rust); }
 
+.free-guide,
 .free-checklist {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 40px;
   align-items: start;
   max-width: 980px;
-  margin: 0 auto 72px;
+  margin: 0 auto 48px;
   padding-top: 12px;
 }
+.guide-preview,
 .checklist-preview {
   margin: 0;
-  background: #F9F5ED;
+  background: var(--cream);
   border: 1px solid var(--gold-soft);
   border-radius: 12px;
   padding: 12px;
   box-shadow: var(--shadow);
 }
+.guide-preview img,
 .checklist-preview img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 4px;
 }
+.guide-preview figcaption,
 .checklist-preview figcaption {
   font-size: 14px;
   color: var(--ink-soft);
@@ -1161,16 +1238,56 @@ table.compare .btn { display: inline-block; margin-top: 8px; }
   text-align: center;
   line-height: 1.5;
 }
+.free-guide-form,
 .free-checklist-form { min-width: 0; position: sticky; top: 24px; }
 
+.guide-contents {
+  max-width: 760px;
+  margin: 0 auto 72px;
+}
+.guide-contents h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(26px, 4vw, 34px);
+  color: var(--ink-brand);
+  margin: 0 0 10px;
+  text-align: center;
+}
+.guide-contents > .wrap > p,
+.guide-contents p {
+  text-align: center;
+  color: var(--ink-soft);
+  margin: 0 0 20px;
+}
+.guide-page-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 2;
+  column-gap: 32px;
+}
+.guide-page-list li {
+  break-inside: avoid;
+  padding: 8px 0 8px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--sans);
+  color: var(--ink-brand);
+  font-size: 16px;
+}
+
 @media (max-width: 800px) {
+  .free-guide,
   .free-checklist { grid-template-columns: 1fr; gap: 28px; }
+  .free-guide-form,
   .free-checklist-form { position: static; }
+  .guide-preview,
   .checklist-preview { max-width: 420px; margin: 0 auto; width: 100%; }
+  .guide-page-list { columns: 1; }
 }
 @media (max-width: 640px) {
   .signup { padding: 22px 16px 14px; margin-left: 0; margin-right: 0; }
-  .signup-post { margin-left: 20px; margin-right: 20px; }
+  .signup-post { margin-left: 16px; margin-right: 16px; }
+  .signup-cover { width: 120px; }
 }
 
 /* Keep hidden recaptcha chrome from causing a horizontal scrollbar */
@@ -1178,20 +1295,13 @@ body { overflow-x: hidden; }
 .grecaptcha-badge { visibility: hidden; }
 
 @media print {
-  .checklist-bar, .signup, .signup-foot-link, .free-checklist { display: none !important; }
-}
-@media print {
-  body.print-recipe .checklist-bar,
-  body.print-recipe .signup { display: none !important; }
+  .guide-bar, .checklist-bar, .signup, .signup-foot-link, .free-guide, .free-checklist, .guide-contents { display: none !important; }
 }
 
-/* ---------- Cinzel (popup headings) ---------- */
-@font-face { font-family: "Cinzel"; src: url("/assets/fonts/cinzel-var.woff2") format("woff2"); font-weight: 400 900; font-style: normal; font-display: swap; }
-
-/* ---------- checklist exit-intent popup ---------- */
-body.kc-popup-open { overflow: hidden; }
-.kc-popup[hidden] { display: none !important; }
-.kc-popup {
+/* ---------- guide exit-intent popup ---------- */
+body.nhn-popup-open { overflow: hidden; }
+.nhn-popup[hidden] { display: none !important; }
+.nhn-popup {
   position: fixed;
   inset: 0;
   z-index: 80;
@@ -1201,12 +1311,12 @@ body.kc-popup-open { overflow: hidden; }
   padding: 16px;
   box-sizing: border-box;
 }
-.kc-popup-backdrop {
+.nhn-popup-backdrop {
   position: absolute;
   inset: 0;
   background: rgba(43, 38, 34, .48);
 }
-.kc-popup-dialog {
+.nhn-popup-dialog {
   position: relative;
   z-index: 1;
   width: 100%;
@@ -1215,23 +1325,23 @@ body.kc-popup-open { overflow: hidden; }
   overflow-x: hidden;
   overflow-y: auto;
   box-sizing: border-box;
-  background: #F9F5ED;
-  border: 1px solid #7A8C6E;
+  background: var(--cream);
+  border: 1px solid var(--gold-soft);
   border-radius: 18px;
   padding: 12px 22px 24px;
   box-shadow: 0 18px 40px -18px rgba(43, 38, 34, .45);
-  color: var(--ink);
+  color: var(--ink-brand);
 }
-.kc-popup-toolbar {
+.nhn-popup-toolbar {
   position: sticky;
   top: 0;
   z-index: 2;
   display: flex;
   justify-content: flex-end;
-  background: #F9F5ED;
+  background: var(--cream);
   margin: 0 -10px 4px 0;
 }
-.kc-popup-close {
+.nhn-popup-close {
   display: grid;
   place-items: center;
   width: 44px;
@@ -1239,92 +1349,89 @@ body.kc-popup-open { overflow: hidden; }
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: #F9F5ED;
-  color: var(--ink);
+  background: var(--cream);
+  color: var(--ink-brand);
   cursor: pointer;
 }
-.kc-popup-close:hover,
-.kc-popup-close:focus-visible { color: #B0674A; }
-.kc-popup-close:focus-visible { outline: 2px solid #7A8C6E; outline-offset: 2px; }
-.kc-popup-logo {
+.nhn-popup-close:hover,
+.nhn-popup-close:focus-visible { color: var(--rust); }
+.nhn-popup-close:focus-visible { outline: 2px solid var(--rust); outline-offset: 2px; }
+.nhn-popup-logo {
   display: block;
   width: 150px;
   height: auto;
   margin: 0 auto 12px;
 }
-.kc-popup-grid {
+.nhn-popup-grid {
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr);
   gap: 22px;
   align-items: center;
 }
-.kc-popup-preview {
-  margin: 0;
-}
-.kc-popup-preview img {
+.nhn-popup-preview { margin: 0; }
+.nhn-popup-preview img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 6px;
   border: 1px solid var(--gold-soft);
   box-shadow: var(--shadow);
-  background: #F9F5ED;
+  background: var(--cream);
 }
-.kc-popup-title {
-  font-family: "Cinzel", var(--serif);
-  font-weight: 600;
+.nhn-popup-title {
+  font-family: var(--serif);
+  font-weight: 500;
   font-size: clamp(22px, 4vw, 28px);
   line-height: 1.25;
-  letter-spacing: .02em;
-  color: var(--ink);
+  color: var(--ink-brand);
   margin: 0 0 10px;
   text-wrap: balance;
 }
-.kc-popup-copy p {
+.nhn-popup-copy p {
   margin: 0 0 16px;
   font-size: 16px;
   line-height: 1.55;
   color: var(--ink-soft);
 }
-.kc-popup-cta {
+.nhn-popup-cta {
   display: block;
   width: 100%;
   box-sizing: border-box;
   text-align: center;
   min-height: 44px;
-  background: #B0674A;
-  border-color: #B0674A;
-  color: #fff;
+  background: var(--rust);
+  border-color: var(--rust);
+  color: var(--cream);
   margin: 0 0 12px;
 }
-.kc-popup-cta:hover,
-.kc-popup-cta:focus-visible {
-  background: #96583e;
-  border-color: #96583e;
-  color: #fff;
+.nhn-popup-cta:hover,
+.nhn-popup-cta:focus-visible {
+  background: var(--tan-dark);
+  border-color: var(--tan-dark);
+  color: var(--cream);
 }
-.kc-popup-fine {
+.nhn-popup-fine {
   margin: 0 !important;
   font-size: 13px !important;
   color: var(--ink-soft);
 }
-.kc-popup-fine a { color: var(--tan-dark); }
+.nhn-popup-fine a { color: var(--tan-dark); }
 
 @media (max-width: 640px) {
-  .kc-popup { padding: 10px; align-items: flex-end; }
-  .kc-popup-dialog {
+  .nhn-popup { padding: 10px; align-items: flex-end; }
+  .nhn-popup-dialog {
     max-width: 100%;
     padding: 8px 16px 20px;
     border-radius: 16px 16px 12px 12px;
   }
-  .kc-popup-grid { grid-template-columns: 1fr; gap: 12px; }
-  .kc-popup-preview { max-width: 160px; margin: 0 auto; }
-  .kc-popup-logo { width: 132px; margin-bottom: 8px; }
-  .kc-popup-title { font-size: 22px; text-align: center; }
-  .kc-popup-copy { text-align: center; }
+  .nhn-popup-grid { grid-template-columns: 1fr; gap: 12px; }
+  .nhn-popup-preview { max-width: 160px; margin: 0 auto; }
+  .nhn-popup-logo { width: 132px; margin-bottom: 8px; }
+  .nhn-popup-title { font-size: 22px; text-align: center; }
+  .nhn-popup-copy { text-align: center; }
 }
 @media print {
-  .kc-popup { display: none !important; }
+  .nhn-popup { display: none !important; }
 }
 
 /* Product and info cards, ported from the Kindle & Cloth article system. */
@@ -1343,8 +1450,7 @@ body.kc-popup-open { overflow: hidden; }
 .gift-shop { margin: 0.75em 0 0; }
 .gift-shop .btn { padding: 10px 16px; font-size: 11px; letter-spacing: .14em; }
 
-.signup {background:var(--paper);border-color:var(--gold-soft)}
-.signup h2 {font-size:30px;margin:0 0 10px}.signup p:last-child{margin-bottom:0}
+.signup p:last-child{margin-bottom:0}
 .prose > .opening::first-letter {font-family:var(--serif);float:left;font-size:78px;line-height:.8;padding:8px 10px 0 0;color:var(--tan-dark)}
 .prose .howto-card .howto-tools{margin:0 0 16px;padding-left:1.3em}
 .prose .howto-card h3{overflow-wrap:anywhere}
